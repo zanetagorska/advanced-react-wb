@@ -1,12 +1,14 @@
-import Head from 'next/head'
+import React from "react";
+import Head from "next/head";
 
-export default () => (
-  <div>
-    <Head>
-      <title>My page title</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
-    </Head>
-    <p>Hello world!</p>
-  </div>
-)
+const Meta = () => (
+  <Head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charSet="utf-8" />
+    <link rel="shortcut icon" href="/static/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
+    <title>Sick Fits!</title>
+  </Head>
+);
+
+export default Meta;

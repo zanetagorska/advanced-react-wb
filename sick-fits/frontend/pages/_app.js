@@ -1,27 +1,18 @@
-import React from 'react'
-import App, { Container } from 'next/app'
-import Page from '../components/Page'
+import App, { Container } from 'next/app';
+import Page from '../components/Page';
 
-export default class MyApp extends App {
-  static async getInitialProps({ Component, router, ctx }) {
-    let pageProps = {}
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-
-    return { pageProps }
-  }
-
+class MyApp extends App {
   render() {
-    const { Component, pageProps } = this.props
+    const { Component } = this.props;
 
     return (
       <Container>
         <Page>
-          <Component {...pageProps} />
+          <Component />
         </Page>
       </Container>
-    )
+    );
   }
 }
+
+export default MyApp;
