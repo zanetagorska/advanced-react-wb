@@ -2,6 +2,7 @@ import React from "react";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import styled from "styled-components";
+import Item from "./Item";
 
 const ALL_ITEMS_QUERY = gql`
   query ALL_ITEMS_QUERY {
@@ -26,11 +27,6 @@ const ItemsList = styled.ul`
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
   padding: 0;
-  background: pink;
-`;
-const Item = styled.li`
-  list-style: none;
-  background: turquoise;
 `;
 
 const Items = () => {
@@ -45,7 +41,7 @@ const Items = () => {
           return (
             <ItemsList>
               {data.items.map(item => (
-                <Item key={item.id}>{item.title}</Item>
+                <Item key={item.id} item={item} />
               ))}
             </ItemsList>
           );
